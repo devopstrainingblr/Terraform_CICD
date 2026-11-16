@@ -14,7 +14,7 @@ pipeline
         {
             steps()
             {
-                git branch: 'main', url: 'https://github.com/devopstrainingblr/Terraform_CICD.git'
+                git branch: 'development', url: 'https://github.com/devopstrainingblr/Terraform_CICD.git'
             }
         }
 
