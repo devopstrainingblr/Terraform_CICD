@@ -10,5 +10,5 @@ resource "aws_instance" "ec2_server" {
 }
 
 resource "aws_s3_bucket" "dockerimages" {
-  name = "data-dockerimages-95843kjfkdfd"
+  bucket = "data-dockerimages-95843kjfkdfd"
 }
