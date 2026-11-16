@@ -8,3 +8,7 @@ resource "aws_instance" "ec2_server" {
     Name = "Terraform_Server"
   }
 }
+
+resource "aws_s3_bucket" "dockerimages" {
+  bucket = "data-dockerimages-95843kjfkdfd"
+}
