@@ -5,7 +5,7 @@ resource "aws_instance" "ec2_server" {
   key_name          = "AmazonWebServices"
 
   tags = {
-    Name = "Terraform_Server"
+    Name = "GitHub_Actions_Server"
   }
 }
 
