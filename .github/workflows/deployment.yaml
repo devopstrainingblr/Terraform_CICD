@@ -19,9 +19,6 @@ jobs:
     
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
-    
-    - name: Verify AWS Identity
-      run: aws sts get-caller-identity
 
     - name: Configure AWS Credentials GitHub Actions
       uses: aws-actions/configure-aws-credentials@v4
@@ -29,6 +26,9 @@ jobs:
         aws-region: ap-south-1
         role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
     
+    - name: Verify AWS Identity
+      run: aws sts get-caller-identity
+      
     - name: Terraform Initialisation
       run: terraform init
 
