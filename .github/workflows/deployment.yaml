@@ -25,6 +25,9 @@ jobs:
       with:
         aws-region: ap-south-1
         role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+        role-session-name: GitHubActions
+        retry-max-attempts: 2
+        action-timeout-s: 30
     
     - name: Verify AWS Identity
       run: aws sts get-caller-identity
