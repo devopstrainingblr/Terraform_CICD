@@ -20,14 +20,17 @@ jobs:
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
 
+    - name: Debug GitHub OIDC Context
+      run: |
+        echo "Repository: $GITHUB_REPOSITORY"
+        echo "Branch: $GITHUB_REF"
+        echo "Event: $GITHUB_EVENT_NAME"
+
     - name: Configure AWS Credentials GitHub Actions
       uses: aws-actions/configure-aws-credentials@v4
       with:
         aws-region: ap-south-1
         role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-        role-session-name: GitHubActions
-        retry-max-attempts: 2
-        action-timeout-s: 30
     
     - name: Verify AWS Identity
       run: aws sts get-caller-identity
